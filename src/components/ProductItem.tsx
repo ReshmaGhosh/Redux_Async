@@ -1,5 +1,17 @@
 import React from "react";
+import { Product } from "../redux/slices/product";
 
-export default function ProductItem() {
-  return <div>ProductItem</div>;
+interface ProductItemProps {
+  product: Product;
 }
+
+const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
+  return (
+    <div className="productItem">
+      <h3>{product.title}</h3>
+      <p>{product.description}</p>
+    </div>
+  );
+};
+
+export default ProductItem;
